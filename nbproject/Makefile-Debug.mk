@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/gdt.o \
-	${OBJECTDIR}/kernel.o
+	${OBJECTDIR}/kernel.o \
+	${OBJECTDIR}/port.o
 
 
 # C Compiler Flags
@@ -72,6 +73,11 @@ ${OBJECTDIR}/kernel.o: kernel.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/kernel.o kernel.cpp
+
+${OBJECTDIR}/port.o: port.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/port.o port.cpp
 
 # Subprojects
 .build-subprojects:
