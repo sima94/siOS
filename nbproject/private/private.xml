@@ -7,11 +7,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/stefan/Documents/siOS/gdt.h</file>
-            <file>file:/home/stefan/Documents/siOS/gdt.cpp</file>
-            <file>file:/home/stefan/Documents/siOS/kernel.cpp</file>
-            <file>file:/home/stefan/Documents/siOS/types.h</file>
-            <file>file:/home/stefan/Documents/siOS/Makefile</file>
+            <file>file:/home/stefan/Documents/siOS/port.h</file>
+            <file>file:/home/stefan/Documents/siOS/port.cpp</file>
         </group>
     </open-files>
 </project-private>

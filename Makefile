@@ -2,7 +2,7 @@ GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-excep
 ASPARAMS = --32
 LDPARAMS = -melf_i386
 
-objects = loader.o gdt.o kernel.o
+objects = loader.o gdt.o port.o kernel.o
 
 %.o: %.cpp
 	g++ $(GPPPARAMS) -o $@ -c $<
@@ -30,7 +30,7 @@ mykernel.iso: mykernel.bin
 	echo '}'                                 >> iso/boot/grub/grub.cfg
 	grub-mkrescue --output=mykernel.iso iso
 	rm -rf iso
-	rm -rf kernel.bin
+	#rm -rf kernel.bin
 
 run: mykernel.iso
 	(killall VirtualBox && sleep 1) || true
@@ -38,4 +38,8 @@ run: mykernel.iso
 
 install: mykernel.bin
 	sudo cp $< /boot/mykernel.bin
+	
+.PHONY: clean
+clean:
+	rm -f $(object) mykernel.bin mykernel.iso
 
