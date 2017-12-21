@@ -13,7 +13,7 @@ void printf(char* str)
 
 	static uint8_t x=0, y=0;
 	
-	for(int i = 0; str[i] != '\0'; +ii ){
+	for(int i = 0; str[i] != '\0'; ++i){
 		switch(str[i])
 		{
 			case '\n':
@@ -23,7 +23,7 @@ void printf(char* str)
 			default:
 				VideoMemory[80*y+x] = (VideoMemory[80*y+x] & 0xFF00) | str[i];
 				x++;
-				break:
+				break;
 		}
 	}
 	
@@ -42,10 +42,6 @@ void printf(char* str)
            y = 0;
 	}
 		
-		
-
-    for(int i = 0; str[i] != '\0'; ++i)
-        VideoMemory[i] = (VideoMemory[i] & 0xFF00) | str[i];
 }
 
 
@@ -63,7 +59,7 @@ extern "C" void callConstructors()
 
 extern "C" void kernelMain(const void* multiboot_structure, uint32_t /*multiboot_magic*/){
     
-    printf("Hello siOS");
+    printf("Hello siOS\n");
     printf("---");
     
     
